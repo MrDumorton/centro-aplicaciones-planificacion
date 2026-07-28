@@ -43,7 +43,7 @@ def archivo_a_base64(ruta: str) -> str:
 # CARGA DE IMÁGENES
 # =========================================================
 fondo_base64 = archivo_a_base64("static/fondo 1.jpg")
-logo_base64 = archivo_a_base64("static/logo_finning_cat.png")
+# logo_base64 = archivo_a_base64("static/logo_finning_cat.png")
 
 
 # =========================================================
