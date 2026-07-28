@@ -856,9 +856,8 @@ st.html(
     ================================================== -->
     <section class="app-card">
 
-        <div class="private-badge">
-            
-        </div>
+                 
+        
 
         <div class="card-header">
 
@@ -925,9 +924,8 @@ st.html(
     ================================================== -->
     <section class="app-card">
 
-        <div class="private-badge">
-            
-        </div>
+                  
+        
 
         <div class="card-header">
 
