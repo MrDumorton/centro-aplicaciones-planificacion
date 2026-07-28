@@ -1020,7 +1020,7 @@ st.html(
     </div>
 
     #<div class="footer-right">
-    #    Centro de Aplicaciones Área Planificación
+    
     #</div>
 
 </footer>
