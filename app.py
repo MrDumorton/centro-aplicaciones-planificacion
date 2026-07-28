@@ -1019,9 +1019,9 @@ st.html(
 
     </div>
 
-    #<div class="footer-right">
+    <div class="footer-right">
     
-    #</div>
+    </div>
 
 </footer>
 """
