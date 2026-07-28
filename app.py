@@ -42,7 +42,7 @@ def archivo_a_base64(ruta: str) -> str:
 # =========================================================
 # CARGA DE IMÁGENES
 # =========================================================
-fondo_base64 = archivo_a_base64("static/fondo.jpg")
+fondo_base64 = archivo_a_base64("static/fondo 1.jpg")
 logo_base64 = archivo_a_base64("static/logo_finning_cat.png")
 
 
@@ -85,15 +85,32 @@ body {{
 [data-testid="stAppViewContainer"] {{
     background:
         linear-gradient(
-            rgba(255, 255, 255, 0.80),
-            rgba(255, 255, 255, 0.80)
+            rgba(255, 255, 255, 0.73),
+            rgba(255, 255, 255, 0.73)
         ),
         url("data:image/jpeg;base64,{fondo_base64}");
 
     background-size: cover;
-    background-position: center;
+    background-position: center center;
     background-repeat: no-repeat;
     background-attachment: fixed;
+    background-color: #efefef;
+}}
+
+.stApp {{
+    background: transparent !important;
+}}
+
+.main {{
+    background: transparent !important;
+}}
+
+[data-testid="stAppViewContainer"] > .main {{
+    background: transparent !important;
+}}
+
+.block-container {{
+    background: transparent !important;
 }}
 
 [data-testid="stHeader"] {{
