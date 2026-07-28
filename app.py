@@ -493,7 +493,7 @@ if logo_base64:
     )
 
 
-st.markdown('<div class="top-yellow-line"></div>', unsafe_allow_html=True)
+st.html('<div class="top-yellow-line"></div>')
 
 
 st.html(
@@ -691,7 +691,6 @@ st.html(
 
     </div>
     """,
-    unsafe_allow_html=True,
 )
 
 
