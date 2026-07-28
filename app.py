@@ -842,7 +842,7 @@ st.html(
         <a
             class="open-button"
             href="{URL_VALIDACION_OT}"
-            target="_blank"
+            target="_self"
             rel="noopener noreferrer"
         >
             ▶&nbsp;&nbsp;Abrir aplicación
@@ -910,7 +910,7 @@ st.html(
         <a
             class="open-button"
             href="{URL_PROCESADOR_EXCEL}"
-            target="_blank"
+            target="_self"
             rel="noopener noreferrer"
         >
             ▶&nbsp;&nbsp;Abrir aplicación
@@ -978,7 +978,7 @@ st.html(
         <a
             class="open-button"
             href="{URL_REVISION_AMT}"
-            target="_blank"
+            target="_self"
             rel="noopener noreferrer"
         >
             ▶&nbsp;&nbsp;Abrir aplicación
