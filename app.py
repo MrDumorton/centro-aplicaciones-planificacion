@@ -789,7 +789,7 @@ st.html(
     <section class="app-card">
 
         <div class="private-badge">
-            🔒 Privado
+            
         </div>
 
         <div class="card-header">
@@ -858,7 +858,7 @@ st.html(
     <section class="app-card">
 
         <div class="private-badge">
-            🔒 Privado
+            
         </div>
 
         <div class="card-header">
@@ -927,7 +927,7 @@ st.html(
     <section class="app-card">
 
         <div class="private-badge">
-            🔒 Privado
+            
         </div>
 
         <div class="card-header">
