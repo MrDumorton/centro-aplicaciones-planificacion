@@ -745,6 +745,9 @@ st.html(
             <span></span>
         </div>
 
+        <div class="header-divider"></div>
+
+        <div>
             <div class="header-title">
                 CENTRO DE APLICACIONES
             </div>
@@ -755,7 +758,7 @@ st.html(
         </div>
 
     </div>
-
+    
     <div class="header-logo-container">
         {logo_html}
     </div>
@@ -785,9 +788,8 @@ st.html(
     ================================================== -->
     <section class="app-card">
 
-        <div class="private-badge">
-            
-        </div>
+                
+        
 
         <div class="card-header">
 
