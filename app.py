@@ -496,45 +496,50 @@ if logo_base64:
 st.markdown('<div class="top-yellow-line"></div>', unsafe_allow_html=True)
 
 
-st.markdown(
+st.html(
     f"""
-    <div class="header-container">
-        <div class="header-left">
-            <div class="app-grid-icon">
-                <span></span>
-                <span></span>
-                <span></span>
-                <span></span>
-            </div>
+<div class="top-yellow-line"></div>
 
-            <div class="header-divider"></div>
+<div class="header-container">
+    <div class="header-left">
 
-            <div>
-                <div class="header-title">CENTRO DE APLICACIONES</div>
-                <div class="header-subtitle">
-                    Validación y Procesamiento
-                </div>
-            </div>
+        <div class="app-grid-icon">
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
         </div>
+
+        <div class="header-divider"></div>
 
         <div>
-            {logo_html}
+            <div class="header-title">
+                CENTRO DE APLICACIONES
+            </div>
+
+            <div class="header-subtitle">
+                Validación y Procesamiento
+            </div>
         </div>
     </div>
 
-    <div class="welcome">
-        <h1>Bienvenido</h1>
-        <p>Selecciona una aplicación para comenzar</p>
+    <div class="header-logo-container">
+        {logo_html}
     </div>
-    """,
-    unsafe_allow_html=True,
+</div>
+
+<div class="welcome">
+    <h1>Bienvenido</h1>
+    <p>Selecciona una aplicación para comenzar</p>
+</div>
+"""
 )
 
 
 # =========================================================
 # TARJETAS DE LAS APLICACIONES
 # =========================================================
-st.markdown(
+st.html(
     f"""
     <div class="cards-wrapper">
 
@@ -693,7 +698,7 @@ st.markdown(
 # =========================================================
 # PIE DE PÁGINA
 # =========================================================
-st.markdown(
+st.html(
     """
     <footer class="footer">
 
