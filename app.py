@@ -745,9 +745,6 @@ st.html(
             <span></span>
         </div>
 
-        <div class="header-divider"></div>
-
-        <div>
             <div class="header-title">
                 CENTRO DE APLICACIONES
             </div>
