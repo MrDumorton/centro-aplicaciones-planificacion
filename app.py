@@ -843,7 +843,7 @@ st.html(
             class="open-button"
             href="{URL_VALIDACION_OT}"
             target="_self"
-            rel="noopener noreferrer"
+            
         >
             ▶&nbsp;&nbsp;Abrir aplicación
         </a>
