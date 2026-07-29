@@ -467,6 +467,11 @@ body {{
 ===================================================== */
 
 .open-button {{
+    position: relative;
+    z-index: 20;
+    pointer-events: auto;
+    cursor: pointer;
+
     display: block;
 
     width: 100%;
@@ -842,7 +847,8 @@ st.html(
         <a
             class="open-button"
             href="{URL_VALIDACION_OT}"
-            target="_self"
+            target="_blank"
+            rel="noopener noreferrer"
             
         >
             ▶&nbsp;&nbsp;Abrir aplicación
@@ -910,7 +916,7 @@ st.html(
         <a
             class="open-button"
             href="{URL_PROCESADOR_EXCEL}"
-            target="_self"
+            target="_blank"
             rel="noopener noreferrer"
         >
             ▶&nbsp;&nbsp;Abrir aplicación
@@ -978,7 +984,7 @@ st.html(
         <a
             class="open-button"
             href="{URL_REVISION_AMT}"
-            target="_self"
+            target="_blank"
             rel="noopener noreferrer"
         >
             ▶&nbsp;&nbsp;Abrir aplicación
