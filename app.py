@@ -729,6 +729,97 @@ body {{
     }}
 }}
 
+
+/* =====================================================
+   TARJETAS CON BOTONES NATIVOS DE STREAMLIT
+   Evita el problema de enlaces HTML que requieren Ctrl+clic.
+===================================================== */
+
+div[data-testid="stHorizontalBlock"] {{
+    align-items: stretch;
+    gap: 24px;
+}}
+
+div[data-testid="stHorizontalBlock"] > div[data-testid="stColumn"] {{
+    position: relative;
+    min-height: 430px;
+    padding: 30px 28px 26px 28px;
+    background: rgba(255, 255, 255, 0.95);
+    border: 1px solid rgba(20, 20, 20, 0.12);
+    border-radius: 17px;
+    box-shadow: 0 10px 28px rgba(0, 0, 0, 0.14);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}}
+
+div[data-testid="stHorizontalBlock"] > div[data-testid="stColumn"]:hover {{
+    transform: translateY(-5px);
+    box-shadow: 0 15px 34px rgba(0, 0, 0, 0.18);
+}}
+
+.native-card-body {{
+    display: flex;
+    flex-direction: column;
+    min-height: 330px;
+}}
+
+.native-card-body .feature-list {{
+    flex: 1;
+}}
+
+div[data-testid="stLinkButton"] {{
+    width: 100%;
+    margin-top: 16px;
+}}
+
+div[data-testid="stLinkButton"] > a {{
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    width: 100% !important;
+    min-height: 49px !important;
+    padding: 13px 16px !important;
+    box-sizing: border-box !important;
+    background: linear-gradient(90deg, #ffb300, #ffc233) !important;
+    border: 0 !important;
+    border-radius: 8px !important;
+    color: #111111 !important;
+    font-size: 17px !important;
+    font-weight: 800 !important;
+    text-decoration: none !important;
+    box-shadow: none !important;
+    cursor: pointer !important;
+}}
+
+div[data-testid="stLinkButton"] > a:hover {{
+    filter: brightness(0.96);
+    transform: scale(1.01);
+    color: #111111 !important;
+    border: 0 !important;
+}}
+
+@media (max-width: 1100px) {{
+    div[data-testid="stHorizontalBlock"] {{
+        flex-direction: column;
+        max-width: 680px;
+        margin: 0 auto;
+    }}
+
+    div[data-testid="stHorizontalBlock"] > div[data-testid="stColumn"] {{
+        width: 100% !important;
+        min-height: auto;
+    }}
+}}
+
+@media (max-width: 700px) {{
+    div[data-testid="stHorizontalBlock"] > div[data-testid="stColumn"] {{
+        padding: 24px 20px;
+    }}
+
+    .native-card-body {{
+        min-height: auto;
+    }}
+}}
+
 </style>
 """
 )
@@ -786,214 +877,107 @@ st.html(
 # =========================================================
 # TARJETAS DE LAS APLICACIONES
 # =========================================================
-st.html(
-    f"""
-<div class="cards-wrapper">
+# Se usan botones nativos st.link_button en lugar de enlaces <a> dentro
+# de st.html(). De esta forma, las aplicaciones se abren con un clic normal.
 
-    <!-- =================================================
-         VALIDACIÓN OT
-    ================================================== -->
-    <section class="app-card">
+col_validacion, col_procesador, col_amt = st.columns(3, gap="large")
 
-                
-        
 
-        <div class="card-header">
-
-            <div class="card-icon">
-                ☑
-            </div>
-
-            <div>
-                <h2 class="card-title">
-                    Validación OT
-                </h2>
-
-                <div class="card-description">
-                    Validación de Órdenes de Trabajo
+with col_validacion:
+    st.html(
+        """
+        <div class="native-card-body">
+            <div class="card-header">
+                <div class="card-icon">☑</div>
+                <div>
+                    <h2 class="card-title">Validación OT</h2>
+                    <div class="card-description">
+                        Validación de Órdenes de Trabajo
+                    </div>
                 </div>
             </div>
 
+            <div class="card-line"></div>
+
+            <ul class="feature-list">
+                <li><span class="feature-symbol">☑</span>Validación de campos críticos</li>
+                <li><span class="feature-symbol">⚠</span>Detección de inconsistencias</li>
+                <li><span class="feature-symbol">▥</span>Reportes y estadísticas</li>
+            </ul>
         </div>
+        """
+    )
 
-        <div class="card-line"></div>
-
-        <ul class="feature-list">
-
-            <li>
-                <span class="feature-symbol">
-                    ☑
-                </span>
-
-                Validación de campos críticos
-            </li>
-
-            <li>
-                <span class="feature-symbol">
-                    ⚠
-                </span>
-
-                Detección de inconsistencias
-            </li>
-
-            <li>
-                <span class="feature-symbol">
-                    ▥
-                </span>
-
-                Reportes y estadísticas
-            </li>
-
-        </ul>
-
-        <a
-            class="open-button"
-            href="{URL_VALIDACION_OT}"
-            target="_top"
-            
-        >
-            ▶&nbsp;&nbsp;Abrir aplicación
-        </a>
-
-    </section>
+    st.link_button(
+        "▶  Abrir aplicación",
+        URL_VALIDACION_OT,
+        use_container_width=True,
+        type="primary",
+    )
 
 
-    <!-- =================================================
-         PROCESADOR EXCEL
-    ================================================== -->
-    <section class="app-card">
-
-                 
-        
-
-        <div class="card-header">
-
-            <div class="card-icon">
-                ▤
-            </div>
-
-            <div>
-                <h2 class="card-title">
-                    Procesador Excel
-                </h2>
-
-                <div class="card-description">
-                    Procesador de archivos Excel
+with col_procesador:
+    st.html(
+        """
+        <div class="native-card-body">
+            <div class="card-header">
+                <div class="card-icon">▤</div>
+                <div>
+                    <h2 class="card-title">Procesador Excel</h2>
+                    <div class="card-description">Procesador de archivos Excel</div>
                 </div>
             </div>
 
+            <div class="card-line"></div>
+
+            <ul class="feature-list">
+                <li><span class="feature-symbol">▣</span>Procesamiento de archivos Excel</li>
+                <li><span class="feature-symbol">◉</span>Transformación de datos</li>
+                <li><span class="feature-symbol">⌁</span>Exportación de resultados</li>
+            </ul>
         </div>
+        """
+    )
 
-        <div class="card-line"></div>
-
-        <ul class="feature-list">
-
-            <li>
-                <span class="feature-symbol">
-                    ▣
-                </span>
-
-                Procesamiento de archivos Excel
-            </li>
-
-            <li>
-                <span class="feature-symbol">
-                    ◉
-                </span>
-
-                Transformación de datos
-            </li>
-
-            <li>
-                <span class="feature-symbol">
-                    ⌁
-                </span>
-
-                Exportación de resultados
-            </li>
-
-        </ul>
-
-        <a
-            class="open-button"
-            href="{URL_PROCESADOR_EXCEL}"
-            target="_top"
-        >
-            ▶&nbsp;&nbsp;Abrir aplicación
-        </a>
-
-    </section>
+    st.link_button(
+        "▶  Abrir aplicación",
+        URL_PROCESADOR_EXCEL,
+        use_container_width=True,
+        type="primary",
+    )
 
 
-    <!-- =================================================
-         REVISIÓN DETENCIONES AMT
-    ================================================== -->
-    <section class="app-card">
-
-                  
-        
-
-        <div class="card-header">
-
-            <div class="card-icon">
-                ▥
-            </div>
-
-            <div>
-                <h2 class="card-title">
-                    Revisión Detenciones AMT
-                </h2>
-
-                <div class="card-description">
-                    Revisión detenciones AMT vs detenciones Collahuasi
+with col_amt:
+    st.html(
+        """
+        <div class="native-card-body">
+            <div class="card-header">
+                <div class="card-icon">▥</div>
+                <div>
+                    <h2 class="card-title">Revisión Detenciones AMT</h2>
+                    <div class="card-description">
+                        Revisión detenciones AMT vs detenciones Collahuasi
+                    </div>
                 </div>
             </div>
 
+            <div class="card-line"></div>
+
+            <ul class="feature-list">
+                <li><span class="feature-symbol">↔</span>Comparación de detenciones</li>
+                <li><span class="feature-symbol">◯</span>Análisis de discrepancias</li>
+                <li><span class="feature-symbol">▥</span>Reportes de revisión</li>
+            </ul>
         </div>
+        """
+    )
 
-        <div class="card-line"></div>
-
-        <ul class="feature-list">
-
-            <li>
-                <span class="feature-symbol">
-                    ↔
-                </span>
-
-                Comparación de detenciones
-            </li>
-
-            <li>
-                <span class="feature-symbol">
-                    ◯
-                </span>
-
-                Análisis de discrepancias
-            </li>
-
-            <li>
-                <span class="feature-symbol">
-                    ▥
-                </span>
-
-                Reportes de revisión
-            </li>
-
-        </ul>
-
-        <a
-            class="open-button"
-            href="{URL_REVISION_AMT}"
-            target="_top"
-        >
-            ▶&nbsp;&nbsp;Abrir aplicación
-        </a>
-
-    </section>
-
-</div>
-"""
-)
+    st.link_button(
+        "▶  Abrir aplicación",
+        URL_REVISION_AMT,
+        use_container_width=True,
+        type="primary",
+    )
 
 
 # =========================================================
